@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  rust-tutorial:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rust-tutorial
+    tty: true
+    env_file: .env
+    volumes:
+      - .:/root/rust-tutorial
+      - rust-tutorial:/root/.vscode-server/extensions
+      - rust-tutorial-insiders:/root/.vscode-server-insiders/extensions
+
+volumes:
+  rust-tutorial:
+  rust-tutorial-insiders:
